@@ -137,3 +137,9 @@ Client receives JSON
 7. **Validation**: always apply `@Valid` on DTO in Controller
 8. **Security**: never expose password in DTO response
 9. **Optional**: Mapper can also handle **list conversion** and **Optional mapping**
+
+---
+## Data Flow Diagram
+
+![DTO Mapper Data Flow](./images/dto_mapper_flow.png)
+

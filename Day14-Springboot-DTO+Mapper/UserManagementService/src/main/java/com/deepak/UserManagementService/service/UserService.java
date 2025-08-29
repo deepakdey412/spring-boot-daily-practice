@@ -40,29 +40,18 @@ public class UserService {
     }
 
     public UserDTO update(int id, UserDTO userDTO) {
-        // DB me record check karo
         UserEntity existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-
-        // Update fields
         existingUser.setName(userDTO.getName());
         existingUser.setEmail(userDTO.getEmail());
-
-        // Save updated entity
         UserEntity updatedUser = userRepository.save(existingUser);
-
-        // DTO me convert karke return karo
         return userMapper.toDTO(updatedUser);
     }
 
     public void deleteById(int id) {
-        // Check if user exists
         UserEntity existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-
-        // Delete user
         userRepository.delete(existingUser);
     }
-
-
 }
+

@@ -141,5 +141,5 @@ Client receives JSON
 ---
 ## Data Flow Diagram
 
-![DTO Mapper Data Flow](./images/dto_mapper_flow.png)
+![DTO Mapper Data Flow](./Images/dto_mapper_flow.png)
 

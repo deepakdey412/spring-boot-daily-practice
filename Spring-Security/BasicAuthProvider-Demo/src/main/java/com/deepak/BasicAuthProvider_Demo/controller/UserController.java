@@ -16,4 +16,10 @@ public class UserController {
     public User save(@RequestBody User user){   // 👈 @RequestBody lagao
         return userService.saveUser(user);      // 👈 directly save and return
     }
+
+     @GetMapping("/message")
+    public String getMsg(){
+        return "Heyy Deepak";
+    }
 }
+

@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")  // endpoint thoda meaningful banaya
+@RequestMapping("/api/users")  
 public class UserController {
 
-    // Injecting UserService (service layer)
     @Autowired
     private UserService userService;
 
@@ -55,3 +54,4 @@ public class UserController {
         return "All users deleted";
     }
 }
+

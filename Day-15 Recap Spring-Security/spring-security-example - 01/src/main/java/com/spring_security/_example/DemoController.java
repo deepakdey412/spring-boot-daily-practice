@@ -17,4 +17,5 @@ public class DemoController {
         return "Session id is : "+ request.getSession().getId();
     }
 }
-//Session id + CSRF is only for the MVC
+
+//Session id + CSRF is only for the MVC 

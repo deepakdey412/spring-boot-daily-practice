@@ -1,4 +1,4 @@
-package com.deepak.demo.controlller;
+package com.deepak.demo.controller;
 
 
 import com.deepak.demo.entity.Users;
@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
-    public UserService userService;
+    private final UserService userService;
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
 
-    //Save
     @PostMapping("/save")
     public ResponseEntity<Users> saveMyUser(@RequestBody Users users){
         Users savedUser = userService.saveUser(users);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
-
-    //Get by id
     @GetMapping("/{id}")
     public ResponseEntity<Users> getMyUserById(@PathVariable Long id){
         Users foundUser = userService.getById(id);
         return new ResponseEntity<>(foundUser, HttpStatus.FOUND);
     }
 }
+

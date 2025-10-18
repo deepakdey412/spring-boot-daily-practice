@@ -23,7 +23,7 @@ public class SecurityConfig {
         httpSecurity
                 .csrf(csrf -> csrf.disable())  // ✅ Disable CSRF for testing APIs
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user/saave").permitAll()  // ✅ Permit /user/save only endpoints only 
+                        .requestMatchers("/user/save").permitAll()  // ✅ Permit /user/save only endpoints only 
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults());
 
@@ -51,4 +51,5 @@ public class SecurityConfig {
         return new ProviderManager(daoAuthenticationProvider);
     }
 }
+
 

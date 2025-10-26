@@ -12,8 +12,10 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class DemoController {
 
-    @Autowired
-    DemoServices demoServices;
+    private final  DemoServices demoServices;
+    public DemoController (DemoServices demoServices){
+        this.demoService = demoservice;
+    }
 
     @PostMapping("/save")
     public String saveUer(@RequestBody UserModel userModel){
@@ -40,3 +42,4 @@ public class DemoController {
 
 
 }
+

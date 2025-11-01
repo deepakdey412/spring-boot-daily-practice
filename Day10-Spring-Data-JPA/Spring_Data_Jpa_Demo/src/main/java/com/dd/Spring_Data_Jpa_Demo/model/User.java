@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String name;
     private String roll_no;
     private String email;
@@ -17,7 +17,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String roll_no, String email) {
+    public User(long id, String name, String roll_no, String email) {
         this.id = id;
         this.name = name;
         this.roll_no = roll_no;
@@ -28,7 +28,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -56,3 +56,4 @@ public class User {
         this.email = email;
     }
 }
+

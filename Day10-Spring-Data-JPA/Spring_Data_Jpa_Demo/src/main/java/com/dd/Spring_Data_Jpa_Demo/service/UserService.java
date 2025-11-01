@@ -15,8 +15,6 @@ public class UserService {
     UserService (UserRepository userRepository){
         this.userRepository= userRepository
     }
-
-
     // Save a new user
     public User saveUser(User user) {
         return userRepository.save(user);
@@ -37,13 +35,9 @@ public class UserService {
         // Fetch existing user from DB
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id " + id));
-
-        // Update fields
         existingUser.setName(updatedUser.getName());
         existingUser.setRoll_no(updatedUser.getRoll_no());
         existingUser.setEmail(updatedUser.getEmail());
-
-        // Save updated user
         return userRepository.save(existingUser);
     }
 
@@ -57,4 +51,5 @@ public class UserService {
         userRepository.deleteAll();
     }
 }
+
 

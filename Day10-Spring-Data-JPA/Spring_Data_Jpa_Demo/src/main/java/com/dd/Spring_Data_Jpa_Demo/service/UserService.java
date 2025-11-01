@@ -10,9 +10,12 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private final UserRepository userRepository;
 
-    @Autowired
-    private UserRepository userRepository;
+    UserService (UserRepository userRepository){
+        this.userRepository= userRepository
+    }
+
 
     // Save a new user
     public User saveUser(User user) {
@@ -54,3 +57,4 @@ public class UserService {
         userRepository.deleteAll();
     }
 }
+

@@ -43,6 +43,7 @@ public class UserController {
 //    public Optional<User> getWithoutCache(@PathVariable Integer id) {
 //        return userService.findByIdWithoutCache(id);
 //    }
+    
     @GetMapping("/without-cache/{id}")
     public Map<String, Object> getWithoutCache(@PathVariable Integer id) {
         long start = System.currentTimeMillis();
@@ -52,8 +53,10 @@ public class UserController {
         Map<String, Object> response = new HashMap<>();
         response.put("user", user);
         response.put("timeTakenMs", end - start); 
+        
         return response;
     }
 
 
 }
+
